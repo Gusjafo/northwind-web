@@ -1,0 +1,45 @@
+<div class="login-container">
+  <mat-card class="login-card">
+    <mat-card-header class="pb-3">
+      <mat-card-title>Iniciar Sesión</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <mat-form-field appearance="fill" class="full-width">
+          <mat-label><mat-icon class="pt-1">email</mat-icon> Email</mat-label>
+          <input matInput formControlName="email" />
+          <mat-error *ngIf="loginForm.get('email')?.hasError('required')"
+            >El Email es obligatorio</mat-error
+          >
+          <mat-error *ngIf="loginForm.get('email')?.hasError('email')"
+            >El formato es invalido</mat-error
+          >
+        </mat-form-field>
+        <mat-form-field appearance="fill" class="full-width">
+          <mat-label
+            ><mat-icon class="pt-1">vpn_key</mat-icon> Contraseña</mat-label
+          >
+          <input matInput type="password" formControlName="password" />
+          <mat-error *ngIf="loginForm.get('password')?.hasError('required')"
+            >La contraseña es obligatoria</mat-error
+          >
+          <mat-error *ngIf="loginForm.get('password')?.hasError('minlength')"
+            >La contraseña debe tener mas de 2 caracteres</mat-error
+          >
+          <mat-error *ngIf="loginForm.get('password')?.hasError('maxlength')"
+            >La contraseña debe tener menos de 20 caracteres</mat-error
+          >
+        </mat-form-field>
+        <button
+          mat-raised-button
+          color="primary"
+          type="submit"
+          class="full-width mt-2"
+          [disabled]="!loginForm.valid"
+        >
+          Iniciar Sesión
+        </button>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>
