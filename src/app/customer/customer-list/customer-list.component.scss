@@ -1,0 +1,34 @@
+.customer-container {
+  padding-top: 5%;
+  @media(max-width: 767px){
+    padding-top: 15%;
+  }
+}
+
+.customer-card {
+  margin: 1%;
+  display: inline-block;
+  width: 250px;
+  @media(max-width: 767px){
+    width: 98%;
+  }
+}
+
+.customer-header-image {
+  background-image: url("../../../assets/img/examples/shiba1.jpg");
+  background-size: cover;
+}
+
+.paginator-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.new-customer{
+  padding-bottom: 10px;
+  @media(max-width: 767px){
+    padding-bottom: 10px;
+  }
+}

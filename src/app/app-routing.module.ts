@@ -19,6 +19,12 @@ const appRoutes: Routes = [
     canMatch: [AuthGuard],
   },
   {
+    path: 'order',
+    loadChildren: () =>
+      import('./order/order.module').then((mod) => mod.OrderModule),
+    canMatch: [AuthGuard],
+  },
+  {
     path: 'login',
     component: LoginComponent,
   },

@@ -29,6 +29,10 @@
           <mat-error *ngIf="loginForm.get('password')?.hasError('maxlength')"
             >La contraseña debe tener menos de 20 caracteres</mat-error
           >
+          <mat-error
+            *ngIf="loginForm.get('password')?.hasError('cannotContainSpace')"
+            >password cannot contain space</mat-error
+          >
         </mat-form-field>
         <button
           mat-raised-button

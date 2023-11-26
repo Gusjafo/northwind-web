@@ -6,16 +6,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SharedModule } from './shared/shared.module';
 import { AppRoutingModule } from './app-routing.module';
 import { LoginComponent } from './login/login.component';
-import { MatCardModule } from '@angular/material/card';
-import { MatIconModule } from '@angular/material/icon';
-import { MatInputModule } from '@angular/material/input';
-import { MatFormFieldModule } from '@angular/material/form-field';
+
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { MatButtonModule } from '@angular/material/button'; // Importa el módulo de botón
-import { HttpClientModule } from '@angular/common/http'
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { AuthService } from './auth/auth.service';
 import { LogoutComponent } from './logout/logout.component';
-
+import { AuthGuard } from './auth/auth.guard';
+import { AuthHttpInterceptor } from './auth/auth-http-interceptor';
+import { MaterialModule } from './material.module';
 
 @NgModule({
   declarations: [AppComponent, LoginComponent, LogoutComponent],
@@ -25,15 +23,19 @@ import { LogoutComponent } from './logout/logout.component';
     BrowserAnimationsModule,
     SharedModule,
     AppRoutingModule,
-    MatCardModule,
-    MatIconModule,
-    MatInputModule,
-    MatFormFieldModule,
     FormsModule,
     ReactiveFormsModule,
-    MatButtonModule
+    MaterialModule,
   ],
-  providers: [AuthService],
+  providers: [
+    AuthService,
+    AuthGuard,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthHttpInterceptor,
+      multi: true,
+    },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

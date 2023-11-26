@@ -1,0 +1,90 @@
+<div class="new-customer-container">
+  <h3 style="text-align: center; margin-top: 10px;">{{data.title}}</h3>
+  <form [formGroup]="newCustomerForm">
+    <div mat-dialog-content>
+      <div class="element-form">
+        <label class="label-description">First name:</label>
+        <mat-form-field class="new-customer-form-field">
+          <mat-label>First name</mat-label>
+          <input
+            type="text"
+            matInput
+            aria-label="First name"
+            formControlName="firstName"
+          />
+          <mat-error *ngIf="newCustomerForm.get('firstName')?.hasError('required')">First Name is required</mat-error>
+          <mat-error *ngIf="newCustomerForm.get('firstName')?.hasError('cannotContainSpace')">First Name cannot contain space</mat-error>
+        </mat-form-field>
+      </div>
+      <div class="element-form">
+        <label class="label-description">Last name:</label>
+        <mat-form-field class="new-customer-form-field">
+          <mat-label>Last name</mat-label>
+          <input
+            type="text"
+            matInput
+            aria-label="Last name"
+            formControlName="lastName"
+          />
+          <mat-error *ngIf="newCustomerForm.get('lastName')?.hasError('required')">Last Name is required</mat-error>
+          <mat-error *ngIf="newCustomerForm.get('lastName')?.hasError('cannotContainSpace')">Last Name cannot contain space</mat-error>
+        </mat-form-field>
+      </div>
+      <div class="element-form">
+        <label class="label-description">Phone:</label>
+        <mat-form-field class="new-customer-form-field">
+          <mat-label>Phone</mat-label>
+          <input
+            type="text"
+            matInput
+            aria-label="Phone"
+            formControlName="phone"
+          />
+          <mat-error *ngIf="newCustomerForm.get('phone')?.hasError('required')">Phone is required</mat-error>
+          <mat-error *ngIf="newCustomerForm.get('phone')?.hasError('cannotContainSpace')">Phone cannot contain space</mat-error>
+        </mat-form-field>
+      </div>
+      <div class="element-form">
+        <label class="label-description">City:</label>
+        <mat-form-field class="new-customer-form-field">
+          <mat-label>City</mat-label>
+          <input
+            type="text"
+            matInput
+            aria-label="City"
+            formControlName="city"
+          />
+          <mat-error *ngIf="newCustomerForm.get('city')?.hasError('required')">City is required</mat-error>
+          <mat-error *ngIf="newCustomerForm.get('city')?.hasError('cannotContainSpace')">City cannot contain space</mat-error>
+        </mat-form-field>
+      </div>
+      <div class="element-form">
+        <label class="label-description">Country:</label>
+        <mat-form-field class="new-customer-form-field">
+          <mat-label>Country</mat-label>
+          <input
+            type="text"
+            matInput
+            aria-label="Country"
+            formControlName="country"
+          />
+          <mat-error *ngIf="newCustomerForm.get('country')?.hasError('required')">Country is required</mat-error>
+          <mat-error *ngIf="newCustomerForm.get('country')?.hasError('cannotContainSpace')">Country cannot contain space</mat-error>
+        </mat-form-field>
+      </div>
+    </div>
+    <div mat-dialog-actions>
+      <button mat-button (click)="onNoClick()">Close</button>
+      <button
+        mat-raised-button
+        color="primary"
+        type="submit"
+        [disabled]="newCustomerForm.invalid"
+        (click)="save()"
+      >
+        Save
+      </button>
+    </div>
+  </form>
+</div>
+

@@ -1,1 +1,39 @@
-<p>customer-list works!</p>
+<div class="customer-container">
+  <div class="new-customer">
+    <button mat-raised-button color="primary" (click)="newCustomer()">New Customer</button>
+  </div>
+  <div>
+    <div *ngFor="let item of customers" class="customer-card">
+      <mat-card>
+        <mat-card-header>
+          <div mat-card-avatar class="customer-header-image"></div>
+          <mat-card-title>{{ item.firstName }}</mat-card-title>
+          <mat-card-subtitle
+            >Stock Actual: {{ item.lastName }}</mat-card-subtitle
+          >
+        </mat-card-header>
+
+        <mat-card-content>
+          <p>
+            {{ item.country }}
+          </p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-stroked-button (click)="editCustomer(item.id)">Editar</button>
+          <button mat-stroked-button (click)="viewDetails(item.id)">Detalles</button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </div>
+  <div class="paginator-container">
+    <mat-paginator
+      (page)="handlePageEvent($event)"
+      [length]="numberOfRecords"
+      [pageSize]="pageSize"
+      [pageIndex]="pageIndex"
+      [pageSizeOptions]="pageSizeOptions"
+      aria-label="Select page"
+    >
+    </mat-paginator>
+  </div>
+</div>

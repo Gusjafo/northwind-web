@@ -1,0 +1,9 @@
+<div class="order-container">
+  <app-table-view
+    *ngIf="columns && items"
+    [dataSource]="items"
+    [columnsToDisplay]="columns"
+    [columnsToDisplayWithExpand]="columnsExpand"
+    (dataFromPaginator)="dataFromPaginator($event)"
+  ></app-table-view>
+</div>
