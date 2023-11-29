@@ -31,10 +31,13 @@ tr.example-element-row:not(.example-expanded-row):active {
   margin-top: 20px;
 }
 
-.material-symbols-outlined {
-  font-variation-settings:
-  'FILL' 0,
-  'wght' 400,
-  'GRAD' 0,
-  'opsz' 48
+.buttons-container{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.buttons-container div:first-child{
+  margin-top: 5px;
 }

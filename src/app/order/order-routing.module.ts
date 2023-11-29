@@ -4,6 +4,7 @@ import { AuthGuard } from '../auth/auth.guard';
 import { Role } from '../auth/role';
 import { OrderContainerComponent } from './order-container/order-container.component';
 import { CommonModule } from '@angular/common';
+import { OrderDetailComponent } from './order-detail/order-detail.component';
 
 const orderRoutes: Routes = [
   {
@@ -12,6 +13,10 @@ const orderRoutes: Routes = [
       {
         path: '',
         component: OrderContainerComponent,
+      },
+      {
+        path: 'detail/:orderId',
+        component: OrderDetailComponent,
       },
     ],
     canActivate: [AuthGuard],

@@ -54,8 +54,4 @@ export class TableViewComponent {
     this.pageIndex = e.pageIndex;
     this.dataFromPaginator.emit({size: this.pageSize, index: this.pageIndex})
   }
-
-  openOrderDetailsModal() {
-    console.log("hola")
-  }
 }

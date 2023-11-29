@@ -1,0 +1,23 @@
+h1, h2, h3 {
+  text-align: center;
+  text-transform: uppercase;
+}
+
+table {
+  width: 100%;
+}
+
+table th:first-child,td:first-child {
+  width: 32px;
+  border-right: 1px solid currentColor;
+  padding-right: 24px;
+  text-align: center;
+}
+
+table th {
+  border-bottom: 1px solid currentColor;
+}
+
+.table-container{
+  padding: 80px 10% 0;
+}
