@@ -1,0 +1,21 @@
+<div>
+  <div class="supplier-card">
+    <div *ngFor="let item of items" class="customer-card">
+      <mat-card class="body-card">
+        <mat-card-header>
+          <div mat-card-avatar class="customer-header-image"></div>
+          <mat-card-title>{{ item.companyName }}</mat-card-title>
+          <mat-card-subtitle
+            >Contact Name: {{ item.contactName }}</mat-card-subtitle
+          >
+        </mat-card-header>
+
+        <mat-card-content>
+          <p>
+            {{ item.city }}
+          </p>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+</div>

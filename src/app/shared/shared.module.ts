@@ -7,20 +7,26 @@ import { TableViewComponent } from './table-view/table-view.component';
 import { MatTableModule } from '@angular/material/table';
 import { MaterialModule } from '../material.module';
 import { TableCustomComponent } from './table-custom/table-custom.component';
+import { SwitchViewComponent } from './switch-view/switch-view.component';
+import { PaginatorComponent } from './paginator/paginator.component';
 
 @NgModule({
-  declarations: [NavBarComponent, NotFoundComponent, TableViewComponent, TableCustomComponent],
+  declarations: [
+    NavBarComponent,
+    NotFoundComponent,
+    TableViewComponent,
+    TableCustomComponent,
+    SwitchViewComponent,
+    PaginatorComponent,
+  ],
   exports: [
     NavBarComponent,
     NotFoundComponent,
     TableViewComponent,
-    TableCustomComponent
+    TableCustomComponent,
+    SwitchViewComponent,
+    PaginatorComponent
   ],
-  imports: [
-    CommonModule,
-    RouterModule,
-    MatTableModule,
-    MaterialModule
-  ],
+  imports: [CommonModule, RouterModule, MatTableModule, MaterialModule],
 })
 export class SharedModule {}

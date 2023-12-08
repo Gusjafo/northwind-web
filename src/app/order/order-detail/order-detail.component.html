@@ -1,13 +1,16 @@
 <div>
   <button mat-raised-button color="primary" routerLink="/order">Back</button>
 </div>
-<app-table-custom
-  [dataSource]="orderMain"
-  [columnsToDisplay]="columnsMain"
-  title="Order"
-></app-table-custom>
-<app-table-custom
-  [dataSource]="orderDetails"
-  [columnsToDisplay]="columnsDetails"
-  title="Order Details"
-></app-table-custom>
+<div class="detail-container">
+  <app-table-custom
+    [dataSource]="orderMain"
+    [columnsToDisplay]="columnsMain"
+    title="Order"
+  ></app-table-custom>
+  <br>
+  <app-table-custom
+    [dataSource]="orderDetails"
+    [columnsToDisplay]="columnsDetails"
+    title="Order Details"
+  ></app-table-custom>
+</div>

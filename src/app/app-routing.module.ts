@@ -25,6 +25,12 @@ const appRoutes: Routes = [
     canMatch: [AuthGuard],
   },
   {
+    path: 'supplier',
+    loadChildren: () =>
+      import('./supplier/supplier.module').then((mod) => mod.SupplierModule),
+    canMatch: [AuthGuard],
+  },
+  {
     path: 'login',
     component: LoginComponent,
   },

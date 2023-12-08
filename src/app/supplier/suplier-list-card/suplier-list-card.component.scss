@@ -1,0 +1,12 @@
+.customer-card {
+  margin: 1%;
+  display: inline-block;
+  @media(max-width: 767px){
+    width: 98%;
+  }
+}
+
+.body-card{
+  width: 350px;
+  height: 150px;
+}

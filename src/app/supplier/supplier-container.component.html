@@ -1,0 +1,30 @@
+<div class="supplier-container">
+  <div>
+    <mat-form-field>
+      <input
+        matInput
+        placeholder="Search"
+        type="text"
+        [formControl]="searchControl"
+      />
+    </mat-form-field>
+  </div>
+  <app-switch-view
+    [templates]="templates"
+    [defaultTemplateKey]="defaultTemplate"
+  >
+  </app-switch-view>
+  <ng-template #cardViewTemplate>
+    <app-suplier-list-card [items]="items"></app-suplier-list-card>
+  </ng-template>
+
+  <ng-template #tableViewTemplate>
+    <app-suplier-list-table [items]="items"></app-suplier-list-table>
+  </ng-template>
+  <div class="paginator-position">
+    <app-paginator
+      [totalItems]="totalItems"
+      (dataFromPaginator)="dataFromPaginator($event)"
+    ></app-paginator>
+  </div>
+</div>
