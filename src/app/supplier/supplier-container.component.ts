@@ -47,7 +47,6 @@ export class SupplierContainerComponent implements OnInit, AfterViewInit {
         distinctUntilChanged()
       )
       .subscribe((val) => {
-        console.log(val)
         this.getSuppliers(1, 10, val);
       });
   }

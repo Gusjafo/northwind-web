@@ -62,7 +62,6 @@ export class CustomerListComponent {
 
     dialogRef.afterClosed().subscribe((result) => {
       this.getCustomer(1, 10);
-      console.log(result);
     });
   }
 
@@ -72,7 +71,6 @@ export class CustomerListComponent {
     });
 
     dialogRef.afterClosed().subscribe((result) => {
-      console.log(result);
     });
   }
 }
