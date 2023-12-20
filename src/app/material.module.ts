@@ -10,6 +10,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatSidenavModule } from '@angular/material/sidenav';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 @NgModule({
   imports: [
@@ -23,6 +24,8 @@ import { MatSidenavModule } from '@angular/material/sidenav';
     MatDialogModule,
     MatTooltipModule,
     MatSidenavModule,
+    MatProgressSpinnerModule
+
   ],
   exports: [
     MatCardModule,
@@ -34,6 +37,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
     MatDialogModule,
     MatTooltipModule,
     MatSidenavModule,
+    MatProgressSpinnerModule
   ],
   declarations: [],
 })

@@ -9,6 +9,7 @@ import { MaterialModule } from '../material.module';
 import { TableCustomComponent } from './table-custom/table-custom.component';
 import { SwitchViewComponent } from './switch-view/switch-view.component';
 import { PaginatorComponent } from './paginator/paginator.component';
+import { SpinnerComponent } from './spinner/spinner.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { PaginatorComponent } from './paginator/paginator.component';
     TableCustomComponent,
     SwitchViewComponent,
     PaginatorComponent,
+    SpinnerComponent,
   ],
   exports: [
     NavBarComponent,
@@ -25,7 +27,8 @@ import { PaginatorComponent } from './paginator/paginator.component';
     TableViewComponent,
     TableCustomComponent,
     SwitchViewComponent,
-    PaginatorComponent
+    PaginatorComponent,
+    SpinnerComponent
   ],
   imports: [CommonModule, RouterModule, MatTableModule, MaterialModule],
 })

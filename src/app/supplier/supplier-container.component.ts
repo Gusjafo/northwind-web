@@ -22,6 +22,7 @@ export class SupplierContainerComponent implements OnInit, AfterViewInit {
 
   items: Supplier[] = [];
   totalItems: number = 0;
+  isVisible: boolean = true;
 
   @ViewChild('cardViewTemplate') private cardViewTemplate!: TemplateRef<any>;
   @ViewChild('tableViewTemplate') private tableViewTemplate!: TemplateRef<any>;
@@ -39,6 +40,7 @@ export class SupplierContainerComponent implements OnInit, AfterViewInit {
   ) {}
 
   ngOnInit(): void {
+    this.isVisible = true;
     this.defaultTemplate = SwitchViewComponent.CARD_KEY;
     this.getSuppliers(1, 10);
     this.searchControl.valueChanges
@@ -47,6 +49,7 @@ export class SupplierContainerComponent implements OnInit, AfterViewInit {
         distinctUntilChanged()
       )
       .subscribe((val) => {
+        this.isVisible = true;
         this.getSuppliers(1, 10, val);
       });
   }
@@ -63,6 +66,7 @@ export class SupplierContainerComponent implements OnInit, AfterViewInit {
       .subscribe((res: Supplier[]) => {
         this.items = res;
         this.totalItems = res[0].totalRecords;
+        this.isVisible = false;
       });
   }
 

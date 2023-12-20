@@ -12,6 +12,7 @@ import { WhiteSpaceValidator } from '../shared/validators/whiteSpaceValidator';
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;
   loginError: string = '';
+  isVisible: boolean = false;
 
   constructor(
     private fb: FormBuilder,
@@ -43,11 +44,13 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit() {
+    this.isVisible = true;
     if (this.loginForm.valid) {
       this.authService
         .login(this.loginForm.value.email, this.loginForm.value.password)
         .subscribe({
           next: (authResponse: IAuthStatus) => {
+            this.isVisible = false;
             this.router.navigate(['/home']);
           },
           error: (err: any) => {

@@ -20,6 +20,7 @@ export class CustomerListComponent {
   pageIndex: number = 0;
   numberOfRecords: NumberInput = 0;
   pageSizeOptions: number[] = [7, 10, 25];
+  isVisible: boolean = false;
 
   pageEvent: PageEvent = {
     length: 50,
@@ -43,9 +44,11 @@ export class CustomerListComponent {
   }
 
   getCustomer(page: number, rows: number): void {
+    this.isVisible = true;
     this.customerService.getCustomerList(page, rows).subscribe((response) => {
       this.customers = response;
       this.numberOfRecords = response[0].totalRecords;
+      this.isVisible = false;
     });
   }
 

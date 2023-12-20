@@ -20,10 +20,12 @@ export class OrderContainerComponent implements OnInit {
     'totalAmount',
   ];
   columnsExpand = [...this.columns, 'expand'];
+  isVisible: boolean = false;
 
   constructor(private orderContainerService: OrderContainerService) {}
 
   ngOnInit() {
+    this.isVisible = true;
     this.getOrders(1, 10);
   }
 
@@ -31,10 +33,12 @@ export class OrderContainerComponent implements OnInit {
     this.orderContainerService.getOrderList(page, rows).subscribe((res) => {
       this.items = res;
       this.numberOfRecords = res[0].totalRecords;
+      this.isVisible = false;
     });
   }
 
   dataFromPaginator(data: { index: number; size: number }) {
+    this.isVisible = true;
     this.getOrders(data.index + 1, data.size);
   }
 }
